@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MADUSANKA ADMIN</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            min-height:100vh;
+            background:#050008;
+            color:white;
+            font-family:Arial,sans-serif;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .box{
+            width:90%;
+            max-width:500px;
+            padding:35px;
+            border-radius:20px;
+            background:#100018;
+            border:1px solid #9b00ff;
+            box-shadow:0 0 35px #7200ff55;
+            text-align:center;
+        }
+
+        h1{
+            color:#d000ff;
+            margin-bottom:10px;
+        }
+
+        p{
+            color:#aaa;
+            margin-bottom:25px;
+        }
+
+        button{
+            width:100%;
+            padding:15px;
+            border:0;
+            border-radius:12px;
+            background:linear-gradient(90deg,#7200ff,#ff00aa);
+            color:white;
+            font-size:17px;
+            font-weight:bold;
+            cursor:pointer;
+        }
+
+        button:active{
+            transform:scale(.97);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>MADUSANKA ADMIN</h1>
+
+    <p>Welcome to your Song Hub Admin Panel</p>
+
+    <button id="loginBtn">
+        LOGIN
+    </button>
+
+</div>
+
+<script>
+document.getElementById("loginBtn").onclick = function(){
+
+    // Same admin.html → no 404
+    window.location.href = "admin.html";
+
+};
+</script>
+
+</body>
+</html>

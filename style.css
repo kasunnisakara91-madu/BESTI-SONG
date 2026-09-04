@@ -1,0 +1,705 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    min-height:100vh;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #8c20a518,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            #ff29c218,
+            transparent 30%
+        ),
+        #07050b;
+
+    color:#fff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* HEADER */
+
+header{
+
+    height:72px;
+
+    padding:0 6%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    background:#08060cee;
+
+    border-bottom:
+        1px solid #28152f;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+}
+
+
+.logo{
+
+    font-size:19px;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+
+.logo span{
+
+    color:#ff39ce;
+
+    margin-left:5px;
+}
+
+
+.adminBtn{
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border:
+        1px solid #a92cff;
+
+    padding:
+        10px 17px;
+
+    border-radius:10px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+
+.adminBtn:hover{
+
+    background:#a92cff;
+
+    box-shadow:
+        0 0 20px #a92cff55;
+}
+
+
+/* HERO */
+
+.hero{
+
+    min-height:410px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:
+        50px 8%;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 45%,
+            #a52cff44,
+            transparent 34%
+        ),
+
+        radial-gradient(
+            circle at 20% 60%,
+            #ff28c333,
+            transparent 35%
+        );
+}
+
+
+.heroContent{
+
+    max-width:800px;
+}
+
+
+.badge{
+
+    display:inline-block;
+
+    padding:
+        8px 13px;
+
+    border:
+        1px solid #c13aff66;
+
+    border-radius:50px;
+
+    color:#ff4bd2;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+}
+
+
+.hero h1{
+
+    font-size:
+        clamp(
+            45px,
+            9vw,
+            95px
+        );
+
+    line-height:.92;
+
+    font-weight:900;
+}
+
+
+.hero h1 span{
+
+    background:
+        linear-gradient(
+            90deg,
+            #a62cff,
+            #ff39cb
+        );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+}
+
+
+.hero p{
+
+    max-width:520px;
+
+    color:#9d949f;
+
+    margin-top:25px;
+
+    line-height:1.7;
+
+    font-size:14px;
+}
+
+
+/* SEARCH */
+
+.searchSection{
+
+    width:84%;
+
+    margin:
+        -30px auto
+        50px;
+
+    position:relative;
+
+    z-index:10;
+}
+
+
+.searchBox{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    width:100%;
+
+    padding:
+        0 20px;
+
+    height:60px;
+
+    border:
+        1px solid #35203e;
+
+    background:#100a16;
+
+    border-radius:16px;
+
+    box-shadow:
+        0 15px 40px #00000055;
+}
+
+
+.searchBox span{
+
+    color:#ff39cb;
+
+    font-size:25px;
+}
+
+
+.searchBox input{
+
+    flex:1;
+
+    height:100%;
+
+    border:0;
+
+    outline:0;
+
+    background:transparent;
+
+    color:#fff;
+
+    font-size:14px;
+}
+
+
+.searchBox input::placeholder{
+
+    color:#756c78;
+}
+
+
+/* MAIN */
+
+main{
+
+    width:84%;
+
+    margin:auto;
+
+    padding-bottom:160px;
+}
+
+
+.sectionHeader{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:22px;
+}
+
+
+.sectionHeader h2{
+
+    font-size:25px;
+}
+
+
+.sectionHeader p{
+
+    color:#716976;
+
+    font-size:12px;
+
+    margin-top:5px;
+}
+
+
+.songCount{
+
+    color:#a89dab;
+
+    font-size:13px;
+}
+
+
+/* SONGS */
+
+.songs{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(230px,1fr)
+        );
+
+    gap:20px;
+}
+
+
+.card{
+
+    overflow:hidden;
+
+    background:#100b16;
+
+    border:
+        1px solid #28172f;
+
+    border-radius:18px;
+
+    transition:
+        transform .25s,
+        border-color .25s,
+        box-shadow .25s;
+}
+
+
+.card:hover{
+
+    transform:
+        translateY(-6px);
+
+    border-color:#b82cff;
+
+    box-shadow:
+        0 18px 45px
+        #a52cff18;
+}
+
+
+.cover{
+
+    display:block;
+
+    width:100%;
+
+    height:230px;
+
+    object-fit:cover;
+
+    background:#17101d;
+}
+
+
+.cardBody{
+
+    padding:16px;
+}
+
+
+.title{
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+}
+
+
+.artist{
+
+    color:#89808e;
+
+    font-size:13px;
+
+    margin-top:6px;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+}
+
+
+.downloads{
+
+    color:#6f6673;
+
+    font-size:11px;
+
+    margin-top:8px;
+}
+
+
+.buttons{
+
+    display:flex;
+
+    gap:8px;
+
+    margin-top:15px;
+}
+
+
+.buttons button,
+.buttons a{
+
+    flex:1;
+
+    padding:11px 7px;
+
+    border:0;
+
+    border-radius:9px;
+
+    text-align:center;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    text-decoration:none;
+}
+
+
+.play{
+
+    color:#fff;
+
+    background:#a72cff;
+}
+
+
+.download{
+
+    color:#fff;
+
+    background:#ff35c8;
+}
+
+
+.play:hover{
+
+    background:#bc4cff;
+}
+
+
+.download:hover{
+
+    background:#ff58d3;
+}
+
+
+/* LOADING */
+
+.loading{
+
+    width:100%;
+
+    grid-column:
+        1 / -1;
+
+    text-align:center;
+
+    padding:50px 10px;
+
+    color:#827886;
+}
+
+
+/* PLAYER */
+
+.player{
+
+    position:fixed;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    min-height:82px;
+
+    padding:
+        12px 5%;
+
+    display:none;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:#0d0912ee;
+
+    border-top:
+        1px solid #35203d;
+
+    backdrop-filter:
+        blur(18px);
+
+    z-index:200;
+}
+
+
+.player img{
+
+    width:56px;
+
+    height:56px;
+
+    border-radius:9px;
+
+    object-fit:cover;
+}
+
+
+.playerInfo{
+
+    width:200px;
+
+    min-width:120px;
+}
+
+
+.playerInfo strong{
+
+    display:block;
+
+    font-size:13px;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+}
+
+
+.playerInfo small{
+
+    display:block;
+
+    color:#827985;
+
+    font-size:11px;
+
+    margin-top:5px;
+}
+
+
+.player audio{
+
+    flex:1;
+
+    min-width:100px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    header{
+
+        padding:
+            0 5%;
+    }
+
+
+    .logo{
+
+        font-size:14px;
+    }
+
+
+    .hero{
+
+        min-height:350px;
+
+        padding:
+            40px 7%;
+    }
+
+
+    .searchSection,
+    main{
+
+        width:90%;
+    }
+
+
+    .songs{
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+
+        gap:12px;
+    }
+
+
+    .cover{
+
+        height:180px;
+    }
+
+
+    .cardBody{
+
+        padding:12px;
+    }
+
+
+    .title{
+
+        font-size:14px;
+    }
+
+
+    .buttons{
+
+        flex-direction:column;
+    }
+
+
+    .player{
+
+        flex-wrap:wrap;
+
+        padding:
+            10px 4%;
+    }
+
+
+    .playerInfo{
+
+        flex:1;
+
+        width:auto;
+    }
+
+
+    .player audio{
+
+        flex-basis:100%;
+
+        width:100%;
+    }
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="MADUSANKA SONG HUB"
+>
+
+<title>MADUSANKA SONG HUB</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        MADUSANKA
+        <span>SONG HUB</span>
+    </div>
+
+    <a
+        href="admin.html"
+        class="adminBtn"
+    >
+        ADMIN
+    </a>
+
+</header>
+
+
+
+<section class="hero">
+
+    <div class="heroContent">
+
+        <div class="badge">
+            OFFICIAL MUSIC HUB
+        </div>
+
+        <h1>
+            MADUSANKA
+            <br>
+            <span>SONG HUB</span>
+        </h1>
+
+        <p>
+            Listen to your favourite music
+            and download authorized tracks.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<section class="searchSection">
+
+    <div class="searchBox">
+
+        <span>⌕</span>
+
+        <input
+            id="search"
+            type="search"
+            placeholder="Search song or artist..."
+            autocomplete="off"
+        >
+
+    </div>
+
+</section>
+
+
+
+<main>
+
+    <div class="sectionHeader">
+
+        <div>
+
+            <h2>
+                Latest Songs
+            </h2>
+
+            <p>
+                Recently added music
+            </p>
+
+        </div>
+
+        <div
+            id="songCount"
+            class="songCount"
+        >
+            0 Songs
+        </div>
+
+    </div>
+
+
+    <div
+        id="songs"
+        class="songs"
+    >
+
+        <div class="loading">
+            Loading songs...
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<div
+    id="player"
+    class="player"
+>
+
+    <img
+        id="playerCover"
+        src=""
+        alt="Cover"
+    >
+
+
+    <div class="playerInfo">
+
+        <strong id="playerTitle">
+            No song selected
+        </strong>
+
+        <small id="playerArtist">
+            ---
+        </small>
+
+    </div>
+
+
+    <audio
+        id="audio"
+        controls
+    ></audio>
+
+</div>
+
+
+
+<script
+    type="module"
+    src="app.js"
+></script>
+
+
+</body>
+
+</html>

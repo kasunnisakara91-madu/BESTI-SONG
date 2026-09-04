@@ -1,0 +1,77 @@
+rules_version = '2';
+
+service firebase.storage {
+
+    match /b/{bucket}/o {
+
+
+        /* =========================
+           SONG FILES
+        ========================= */
+
+        match /songs/{userId}/{fileName} {
+
+            /*
+             * Anyone can listen/download.
+             */
+
+            allow read: if true;
+
+
+            /*
+             * Only admin can upload.
+             */
+
+            allow write: if isAdmin();
+
+
+            /*
+             * Only admin can delete.
+             */
+
+            allow delete: if isAdmin();
+        }
+
+
+        /* =========================
+           COVER FILES
+        ========================= */
+
+        match /covers/{userId}/{fileName} {
+
+            /*
+             * Public covers.
+             */
+
+            allow read: if true;
+
+
+            /*
+             * Admin only.
+             */
+
+            allow write: if isAdmin();
+
+
+            /*
+             * Admin only.
+             */
+
+            allow delete: if isAdmin();
+        }
+
+
+        /* =========================
+           ADMIN FUNCTION
+        ========================= */
+
+        function isAdmin(){
+
+            return request.auth != null
+
+                && request.auth.token.email
+                    == "damithmadusanka179@gmail.com";
+        }
+
+    }
+}

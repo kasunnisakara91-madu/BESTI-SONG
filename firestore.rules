@@ -1,0 +1,105 @@
+rules_version = '2';
+
+service cloud.firestore {
+
+    match /databases/{database}/documents {
+
+
+        /* =========================
+           USERS
+        ========================= */
+
+        match /users/{userId} {
+
+            allow read: if request.auth != null
+                && request.auth.uid == userId;
+
+            allow create: if request.auth != null
+                && request.auth.uid == userId;
+
+            allow update: if request.auth != null
+                && request.auth.uid == userId;
+
+            allow delete: if false;
+        }
+
+
+        /* =========================
+           SONGS
+        ========================= */
+
+        match /songs/{songId} {
+
+            /*
+             * Everyone can see songs.
+             */
+
+            allow read: if true;
+
+
+            /*
+             * Only authenticated admin.
+             */
+
+            allow create: if isAdmin();
+
+
+            /*
+             * Only admin.
+             */
+
+            allow update: if isAdmin();
+
+
+            /*
+             * Only admin.
+             */
+
+            allow delete: if isAdmin();
+        }
+
+
+        /* =========================
+           OTHER COLLECTIONS
+        ========================= */
+
+        match /api_keys/{id} {
+
+            allow read, write: if false;
+        }
+
+
+        match /scrapers/{id} {
+
+            allow read: if true;
+
+            allow write: if isAdmin();
+        }
+
+
+        match /transactions/{id} {
+
+            allow read: if request.auth != null
+                && resource.data.userId
+                    == request.auth.uid;
+
+            allow create: if request.auth != null;
+
+            allow update, delete: if false;
+        }
+
+
+        /* =========================
+           ADMIN FUNCTION
+        ========================= */
+
+        function isAdmin(){
+
+            return request.auth != null
+
+                && request.auth.token.email
+                    == "damithmadusanka179@gmail.com";
+        }
+
+    }
+}
